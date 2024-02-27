@@ -1,6 +1,12 @@
-import ShareButton from "./ShareButton";
+import ShareButtonTwitter from "./ShareButtonTwitter";
+import ShareButtonLinkdIn from './ShareButtonLinkedIn';
+import ShareButtonFacebook from "./ShareButtonFacebook";
 
-const shareButton = new ShareButton("http://evoluinfo.com.br")
-shareButton.bind(".btn-twitter", "twitter");
-shareButton.bind(".btn-facebook", "facebook");
-shareButton.bind(".btn-linkedin", "linkedin");
+const link: string = "http://evoluinfo.com.br"
+
+const twitter = new ShareButtonTwitter(".btn-twitter", link)
+twitter.bind()
+const facebook = new ShareButtonFacebook(".btn-facebook", link)
+facebook.bind()
+const linkedin = new ShareButtonLinkdIn(".btn-linkedin", link)
+linkedin.bind()
