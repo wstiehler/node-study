@@ -11,9 +11,10 @@ export default abstract class AbstractShareButton {
         this.eventHandler = new EventHandler()
     }
 
-    //Colocando o abstratict, eu obrigo as instancias de AbstractShareButton a criarem o link
+    //Colocando o abstract, eu obrigo as instancias de AbstractShareButton a criarem o link
     abstract createLink() : string
 
+    // Pattern: Templat Method, o fato de eu montar um algoritimo na super classe, e delegar para a sub classe, que seria atraves do metodo createLink
     bind(){
         const link = this.createLink();        
         this.eventHandler.addEventListenerToClass(this.clazz, "click", () => window.open(link))
